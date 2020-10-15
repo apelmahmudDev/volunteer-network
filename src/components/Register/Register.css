@@ -1,0 +1,54 @@
+.volunteer-logo {
+    height: 60px;
+}
+
+.register-area {
+    margin: auto;
+    padding: 5%;
+    border: 2px solid #ABABAB;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.register-header {
+    text-align: left;
+    font-size: 1.5rem;
+}
+
+.register-btn {
+    font-weight: 500;
+    width: 100%;
+    background: #3F90FC;
+    color: #fff;
+    border: 1px solid #ABABAB;
+    border-radius: 0px;
+    margin-top: 25px;
+}
+
+.register-form {
+    text-align: left;
+}
+
+.register-form input {
+    font-weight: 500;
+    padding: 0;
+    margin-top: 25px;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    color: #3D3D3D;
+}
+
+.register-form input:focus {
+    box-shadow: none;  
+}
+
+.register-form input::placeholder {
+    color: #3D3D3D;
+}
+
+.required-warning {
+    font-style: italic;
+    color: red;
+}

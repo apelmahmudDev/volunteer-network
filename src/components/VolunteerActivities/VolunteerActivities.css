@@ -1,0 +1,26 @@
+.activity-item {
+    padding: 20px;
+    display: flex;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.activity-item img {
+    border-radius: 15px;
+    margin-right: 15px;
+}
+
+.activity-btn {
+    background: #E3E3E3;
+}
+
+.activity-describe {
+    width: 100%;
+}
+
+.activity-describe div {
+    text-align: right;
+}
+
+
+

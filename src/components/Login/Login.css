@@ -1,0 +1,30 @@
+.volunteer-logo {
+    height: 60px;
+}
+
+.login-area {
+    margin: auto;
+    padding: 5%;
+    border: 2px solid #ABABAB;
+    height: 400px;
+    background: #fff;
+    border-radius: 5px;
+}
+
+
+.sign-btn {
+    font-weight: 500;
+    width: 100%;
+    border: 1px solid #ABABAB;
+    border-radius: 30px;
+    text-align: left;
+}
+
+.googleIcon {
+    height: 35px;
+    margin-right: 25%;
+}
+
+a {
+    text-decoration: underline;
+}
