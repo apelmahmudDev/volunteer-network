@@ -1,20 +1,40 @@
-import React, { useContext} from 'react';
+import React, { useContext, useState} from 'react';
 import './Register.css';
 import volunteerLogo from '../../images/volunteer-logo.png';
 import { useForm } from "react-hook-form";
 import { UserContext } from '../UserContext/UserContext';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import volunteerOptions from '../../FakeData/volunteers';
 const Register = () => {
     const [user, setUser] = useContext(UserContext);
+    const [volunteerInfo, setVolunteerInfo] = useState({
+        isFilled: false,
+        name: '',
+        email: '', 
+        date: '',
+        description: '',
+        volunteerOption: ''
+    })
+    console.log(volunteerInfo);
+
     const { register, handleSubmit, errors } = useForm();
-    const onSubmit = data => console.log(data);
-
+    const onSubmit = data => {
+        const {name, date, email, description, volunteerName } = data;
+        const registeredForm = {
+            isFilled: true,
+            name: name,
+            date: date,
+            email: email,
+            description: description,
+            volunteerOption: volunteerName
+        }
+        
+        setVolunteerInfo(registeredForm);
+    }
+        
     let { volunteerId } = useParams();
-    console.log(volunteerId)
 
-    const volunteer = volunteerOptions.find(options => options.id === volunteerId);
-    console.log(volunteer)
+    const volunteerOption = volunteerOptions.find(options => options.id === volunteerId);
 
     return (
         <div>
@@ -37,10 +57,14 @@ const Register = () => {
                                 <input name="description" ref={register({ required: true })} placeholder="Description" className="form-control"/>
                                 {errors.description && <span className="required-warning">Description is required</span>}
                                 
-                                <input name="volunteerName" defaultValue="Organize books at the library" ref={register({ required: true })} placeholder="" className="form-control"/>
+                                <input name="volunteerName" defaultValue={volunteerOption.name} ref={register({ required: true })} placeholder="" className="form-control"/>
                                 {errors.volunteerName && <span className="required-warning">Volunteer is required</span>}
 
                                 <button type="submit" className="btn register-btn">Registration</button>
+                                { volunteerInfo.isFilled &&
+                                <Link to="/volunteer_activitise">
+                                    <p className="text-success text-right mt-2"><strong>Click to see you activity</strong></p>
+                                </Link> }
                             </form>
                         </div>
                     </div>

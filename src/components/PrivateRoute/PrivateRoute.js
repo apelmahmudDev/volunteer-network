@@ -4,13 +4,13 @@ import { UserContext } from '../UserContext/UserContext';
 
 const PrivateRoute = ({ children, ...rest }) => {
 
-    const [user, setUser] = useContext(UserContext);
+  const [user, setUser] = useContext(UserContext);
 
     return (
         <Route
           {...rest}
           render={({ location }) =>
-            user.isSigned ? (
+            user.isSignedIn ? (
               children
             ) : (
               <Redirect

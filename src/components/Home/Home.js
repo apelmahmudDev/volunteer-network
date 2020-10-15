@@ -15,7 +15,10 @@ const Home = () => {
             <div className="container">
                 <div className="card-deck">
                     {
-                        bookVolunters.map(item => <BookVolunteer volunteerItem={item}></BookVolunteer>)
+                        bookVolunters.map(item => <BookVolunteer
+                         volunteerItem={item}
+                         key={item.id}
+                        ></BookVolunteer>)
                     }
                 </div>
             </div>

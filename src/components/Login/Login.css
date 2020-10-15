@@ -11,6 +11,18 @@
     border-radius: 5px;
 }
 
+.login-form input{
+    margin-top: 10px;
+    padding: 0;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-radius: 0;
+}
+
+.login-form input:focus{
+    box-shadow: none;
+}
 
 .sign-btn {
     font-weight: 500;
@@ -23,8 +35,4 @@
 .googleIcon {
     height: 35px;
     margin-right: 25%;
-}
-
-a {
-    text-decoration: underline;
 }
