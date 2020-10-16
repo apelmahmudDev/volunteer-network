@@ -1,19 +1,36 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import './VolunteerActivities.css';
 
 const VolunteerActivities = (props) => {
-    const {volunteerOption, photo, date} = props.volunteer;
+    const {volunteerOption, photo, date, _id} = props.volunteer;
+    let history = useHistory();
+
+    const deleteVolunteer = (id) => {
+        fetch(`http://localhost:4200/deleteVolunteer/${id}`, {
+            method: 'DELETE',
+        })
+        .then(res => res.json())
+        .then(result => {
+            if(result){
+                alert('Your selected category has been deleted?')
+                history.push("/home");
+                history.push("/volunteer_activitise");
+            }
+        })
+    }
+
     return (
-        <>
+        <div>
             <div className="activity-item">
                 <img src={photo} alt="" className="w-25"/>
                 <div className="activity-describe">
                     <h3>{volunteerOption}</h3>
                     <p><strong>{date}</strong></p>
-                    <div><button className="btn activity-btn">Cancel</button></div>
+                    <div><button onClick={() => deleteVolunteer(_id)} className="btn activity-btn">Cancel</button></div>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 
