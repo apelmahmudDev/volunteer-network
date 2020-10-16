@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import "./BookVolunteer.css";
 
 const BookVolunteer = (props) => {
-	const {name, img, id} = props.volunteerItem;
+	const {name, img, id} = props.options;
 	return (
 		<>
 			<Link to={`/register/volunteer/${id}`}>

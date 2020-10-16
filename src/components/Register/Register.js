@@ -1,21 +1,14 @@
-import React, { useContext, useState} from 'react';
+import React, { useContext, useEffect, useState} from 'react';
 import './Register.css';
 import volunteerLogo from '../../images/volunteer-logo.png';
 import { useForm } from "react-hook-form";
 import { UserContext } from '../UserContext/UserContext';
-import { Link, useParams } from 'react-router-dom';
-import volunteerOptions from '../../FakeData/volunteers';
+import { useHistory, useParams } from 'react-router-dom';
+
 const Register = () => {
     const [user, setUser] = useContext(UserContext);
-    const [volunteerInfo, setVolunteerInfo] = useState({
-        isFilled: false,
-        name: '',
-        email: '', 
-        date: '',
-        description: '',
-        volunteerOption: ''
-    })
-    console.log(volunteerInfo);
+    const [volunteer, setVolunteer] = useState({});
+    let history = useHistory();
 
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = data => {
@@ -25,16 +18,33 @@ const Register = () => {
             name: name,
             date: date,
             email: email,
+            photo: volunteer.img,
             description: description,
             volunteerOption: volunteerName
         }
-        
-        setVolunteerInfo(registeredForm);
+
+        fetch('http://localhost:4200/addVolunteer', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json'},
+            body: JSON.stringify(registeredForm)
+        })
+        .then(res => res.json())
+        .then(result => {
+            if(result){
+                history.push("/volunteer_activitise");
+            }
+        })
     }
         
     let { volunteerId } = useParams();
 
-    const volunteerOption = volunteerOptions.find(options => options.id === volunteerId);
+    useEffect(() => {
+        fetch(`http://localhost:4200/volunteer/${volunteerId}`)
+        .then(res => res.json())
+        .then(result => {
+            setVolunteer(result)
+        })
+    },[volunteerId])
 
     return (
         <div>
@@ -57,14 +67,10 @@ const Register = () => {
                                 <input name="description" ref={register({ required: true })} placeholder="Description" className="form-control"/>
                                 {errors.description && <span className="required-warning">Description is required</span>}
                                 
-                                <input name="volunteerName" defaultValue={volunteerOption.name} ref={register({ required: true })} placeholder="" className="form-control"/>
+                                <input name="volunteerName" defaultValue={volunteer.name} ref={register({ required: true })} placeholder="" className="form-control"/>
                                 {errors.volunteerName && <span className="required-warning">Volunteer is required</span>}
 
                                 <button type="submit" className="btn register-btn">Registration</button>
-                                { volunteerInfo.isFilled &&
-                                <Link to="/volunteer_activitise">
-                                    <p className="text-success text-right mt-2"><strong>Click to see you activity</strong></p>
-                                </Link> }
                             </form>
                         </div>
                     </div>
