@@ -15,7 +15,7 @@ const TableRow = (props) => {
             if(result){
                 alert('Delete a volunteer list!')
                 history.push("/home");
-                history.push("/admin");
+                history.push("/admin/volunteers-list");
             }
         })
 	}

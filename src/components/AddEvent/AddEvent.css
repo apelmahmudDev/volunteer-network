@@ -5,6 +5,22 @@
     border-radius: 10px;
 }
 
-form label {
+.event-form input {
+    margin-top: 15px;
+}
+
+.event-form input[type="file"]{
+    margin-top: 0;
+}
+
+.event-form span {
+    font-style: italic;
+    font-size: 15px;
+    color: red;
+    font-weight: 400;
+}
+
+.event-form, label {
+    margin-top: 10px;
     font-weight: 500;
 }
