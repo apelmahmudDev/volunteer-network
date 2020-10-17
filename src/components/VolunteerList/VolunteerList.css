@@ -21,3 +21,20 @@
     background: #F5F6FA;
     border-radius: 10px;
 }
+
+.appear-msg {
+    text-align: center;
+    color: #3D3D3D;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.appear-msg button {
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing:2px;
+    background: #0084FF;
+    color: #fff;
+}

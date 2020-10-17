@@ -17,7 +17,8 @@ const VolunteerList = () => {
 
 	return (
 		<div className="container">
-			<div className="list-table">
+			{volunteers.length > 0 ? 
+            <div className="list-table">
                 <table className="table table-borderless text-left">
                     <thead className="table-header text-secondary">
                         <tr>
@@ -37,7 +38,14 @@ const VolunteerList = () => {
                         }
                     </tbody>
                 </table>
+            </div>:
+            <div className="appear-msg">
+                <div>
+                <h1>Don't have a volunteer here.</h1>
+                <button className="btn">Add volunteer</button>
+                </div>
             </div>
+            }
 		</div>
 	);
 };

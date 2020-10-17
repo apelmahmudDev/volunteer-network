@@ -3,7 +3,7 @@ import './Register.css';
 import volunteerLogo from '../../images/volunteer-logo.png';
 import { useForm } from "react-hook-form";
 import { UserContext } from '../UserContext/UserContext';
-import { useHistory, useParams } from 'react-router-dom';
+import { Link, useHistory, useParams } from 'react-router-dom';
 
 const Register = () => {
     const [user, setUser] = useContext(UserContext);
@@ -49,7 +49,7 @@ const Register = () => {
     return (
         <div>
            <div className="container text-center">
-            <img src={volunteerLogo} alt="" className="my-5 volunteer-logo"/>
+            <Link to="/"><img src={volunteerLogo} alt="" className="my-5 volunteer-logo"/></Link>
                 <div className="row">
                     <div className="col-md-6 d-flex align-items-center justify-content-center register-area">
                         <div style={{width:'100%'}}>

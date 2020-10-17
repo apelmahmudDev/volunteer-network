@@ -4,7 +4,7 @@ import * as firebase from "firebase/app";
 import "firebase/auth";
 import volunteerLogo from '../../images/volunteer-logo.png';
 import googleIcon from '../../images/google.png';
-import { useHistory, useLocation } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import firebaseConfig from '../../firebase.config';
 import { useContext } from 'react';
 import { UserContext } from '../UserContext/UserContext';
@@ -138,8 +138,7 @@ const Login = () => {
 
     return (
         <div className="container text-center">
-            <img src={volunteerLogo} alt="" className="my-5 volunteer-logo"/>
-            
+            <Link to="/"><img src={volunteerLogo} alt="" className="my-5 volunteer-logo"/></Link>
             <div className="row">
                 <div className="col-md-6 d-flex align-items-center justify-content-center login-area">
                     <div style={{width:'100%'}}>

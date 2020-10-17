@@ -17,14 +17,13 @@ const ActiveVolunteer = () => {
 
     return (
         <div className="container">
-            <h2>Volunteer: {volunteer.length}</h2>
             <div className="row">
                 <div className="col-md-12 active-volunteer">
                     {
                         volunteer.map(v => <VolunteerActivities
-                             volunteer={v} 
-                             key={v._id}>
-                             </VolunteerActivities>)
+                        volunteer={v} 
+                        key={v._id}>
+                        </VolunteerActivities>)
                     }
                 </div>
             </div>

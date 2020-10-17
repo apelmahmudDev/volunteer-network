@@ -1,0 +1,10 @@
+.event-form {
+    margin: 5%;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+form label {
+    font-weight: 500;
+}

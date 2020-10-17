@@ -6,6 +6,7 @@ const VolunteerActivities = (props) => {
     const {volunteerOption, photo, date, _id} = props.volunteer;
     let history = useHistory();
 
+    // DELETE VOLUNTEER FORM LIST
     const deleteVolunteer = (id) => {
         fetch(`http://localhost:4200/deleteVolunteer/${id}`, {
             method: 'DELETE',

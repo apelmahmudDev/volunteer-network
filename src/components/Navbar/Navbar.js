@@ -15,10 +15,9 @@ const Navbar = () => {
                 <div className="navbar-nav ml-auto">
                 <Link className="nav-link" to="/">Home <span className="sr-only">(current)</span></Link>
                 <Link className="nav-link" to="/">Donation</Link>
-                <Link className="nav-link" to="/events">Events</Link>
+                <Link className="nav-link" to="/volunteer_activitise">Events</Link>
                 <Link className="nav-link" to="/">Blog</Link>
-                <Link className="nav-link" to="/volunteer_activitise">My activity</Link>
-                <Link className="nav-link" to="/admin">Admin</Link>
+                <Link className="nav-link" to="/admin/volunteers-list">Admin</Link>
                 </div>
             </div>
             </nav>

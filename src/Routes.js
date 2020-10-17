@@ -6,7 +6,9 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Login from './components/Login/Login';
 import Events from './components/Events/Events';
 import ActiveVolunteer from './components/ActiveVolunteer/ActiveVolunteer';
-import VolunteerList from './components/VolunteerList/VolunteerList';
+import AddEvent from './components/AddEvent/AddEvent';
+import SideBar from './components/SideBar/SideBar';
+import Navbar from './components/Navbar/Navbar';
   
 const Routes = () => {
     return (
@@ -15,8 +17,10 @@ const Routes = () => {
             <Route path="/home" component={Home} />
             <Route path="/login" component={Login} />
             <Route path="/events" component={Events} />
-            <Route path="/admin" component={VolunteerList} />
+            <Route path="/admin" component={SideBar} />
+            <Route path="/add-event" component={AddEvent} />
             <PrivateRoute path="/volunteer_activitise">
+                <Navbar></Navbar>
                 <ActiveVolunteer/>
             </PrivateRoute>
             <PrivateRoute path="/register/volunteer/:volunteerId">
