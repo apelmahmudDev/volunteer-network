@@ -8,6 +8,7 @@ import './Home.css';
 const Home = () => {
     const [volunteerOptions, setVolunteerOptions] = useState([]);
     
+    // READ ALL EVENTS FROM DATABASE
     useEffect(() => {
         fetch('http://localhost:4200/loadVoptions')
         .then(res => res.json())

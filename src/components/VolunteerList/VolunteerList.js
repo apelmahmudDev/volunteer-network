@@ -6,7 +6,8 @@ import TableRow from './TableRow';
 
 const VolunteerList = () => {
     const [volunteers, setVolunteers] = useState([]);
-
+    
+    // READ ALL VOLUNTEER FOR ADMIN LIST FROM DATABASE
     useEffect(() => {
         fetch('http://localhost:4200/volunteers')
         .then(res => res.json())

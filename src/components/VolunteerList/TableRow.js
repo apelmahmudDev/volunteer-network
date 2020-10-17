@@ -6,6 +6,7 @@ const TableRow = (props) => {
 	const {name, email, date, volunteerOption, _id} = props.volunteer;
 	let history = useHistory();
 
+	// DELETE A VOLUNTEER FROM AND ANDMIN LIST
 	const deleteVolunteer = (id) => {
         fetch(`http://localhost:4200/deleteVolunteer/${id}`, {
             method: 'DELETE',

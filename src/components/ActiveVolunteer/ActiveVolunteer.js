@@ -7,6 +7,7 @@ const ActiveVolunteer = () => {
     const [user, setUser] = useContext(UserContext);
     const [volunteer, setVolunteer] = useState([]);
 
+    // GET SPEACIFIC VOLUNTEER INFO BY EMAIL
     useEffect(() => {
         fetch(`http://localhost:4200/volunteer?email=${user.email}`)
         .then(res => res.json())

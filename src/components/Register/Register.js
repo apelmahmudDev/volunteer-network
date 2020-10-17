@@ -23,6 +23,7 @@ const Register = () => {
             volunteerOption: volunteerName
         }
 
+        // A VOLUNTEER ADDED AT THE V.COLLECTION
         fetch('http://localhost:4200/addVolunteer', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json'},
@@ -38,6 +39,7 @@ const Register = () => {
         
     let { volunteerId } = useParams();
 
+    // LOAD A MATCHING VOLUNTEER INFO FROM DATABASE
     useEffect(() => {
         fetch(`http://localhost:4200/volunteer/${volunteerId}`)
         .then(res => res.json())
