@@ -10,7 +10,7 @@ const ActiveVolunteer = () => {
 
     // GET SPEACIFIC VOLUNTEER INFO BY EMAIL
     useEffect(() => {
-        fetch(`http://localhost:4200/volunteer?email=${user.email}`)
+        fetch(`https://sleepy-spire-06659.herokuapp.com/volunteer?email=${user.email}`)
         .then(res => res.json())
         .then(data => {
             setVolunteer(data);

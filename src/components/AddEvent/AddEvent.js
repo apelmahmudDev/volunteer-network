@@ -7,7 +7,7 @@ const AddEvent = () => {
 
     const onSubmit = data => {
         // INSERT EVENT IN THE DATABASE
-        fetch('http://localhost:4200/addEvent', {
+        fetch('https://sleepy-spire-06659.herokuapp.com/addEvent', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json'},
             body: JSON.stringify(data)

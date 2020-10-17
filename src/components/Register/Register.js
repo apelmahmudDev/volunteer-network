@@ -24,7 +24,7 @@ const Register = () => {
         }
 
         // A VOLUNTEER ADDED AT THE V.COLLECTION
-        fetch('http://localhost:4200/addVolunteer', {
+        fetch('https://sleepy-spire-06659.herokuapp.com/addVolunteer', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json'},
             body: JSON.stringify(registeredForm)
@@ -41,7 +41,7 @@ const Register = () => {
 
     // LOAD A MATCHING VOLUNTEER INFO FROM DATABASE
     useEffect(() => {
-        fetch(`http://localhost:4200/volunteer/${volunteerId}`)
+        fetch(`https://sleepy-spire-06659.herokuapp.com/volunteer/${volunteerId}`)
         .then(res => res.json())
         .then(result => {
             setVolunteer(result)

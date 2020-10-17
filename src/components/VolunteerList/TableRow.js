@@ -8,7 +8,7 @@ const TableRow = (props) => {
 
 	// DELETE A VOLUNTEER FROM AND ANDMIN LIST
 	const deleteVolunteer = (id) => {
-        fetch(`http://localhost:4200/deleteVolunteer/${id}`, {
+        fetch(`https://sleepy-spire-06659.herokuapp.com/deleteVolunteer/${id}`, {
             method: 'DELETE',
         })
         .then(res => res.json())

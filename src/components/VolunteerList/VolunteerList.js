@@ -9,7 +9,7 @@ const VolunteerList = () => {
     
     // READ ALL VOLUNTEER FOR ADMIN LIST FROM DATABASE
     useEffect(() => {
-        fetch('http://localhost:4200/volunteers')
+        fetch('https://sleepy-spire-06659.herokuapp.com/volunteers')
         .then(res => res.json())
         .then(result => {
             setVolunteers(result)
