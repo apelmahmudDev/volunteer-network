@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import Spinner from '../Spinner/Spinner';
 import { UserContext } from '../UserContext/UserContext';
 import VolunteerActivities from '../VolunteerActivities/VolunteerActivities';
 import './ActiveVolunteer.css';
@@ -18,6 +19,7 @@ const ActiveVolunteer = () => {
 
     return (
         <div className="container">
+            {volunteer.length > 0 ?
             <div className="row">
                 <div className="col-md-12 active-volunteer">
                     {
@@ -28,6 +30,9 @@ const ActiveVolunteer = () => {
                     }
                 </div>
             </div>
+            : <Spinner></Spinner>
+            }
+            
         </div>
     );
 };

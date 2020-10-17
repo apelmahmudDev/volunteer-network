@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import BookVolunteer from '../BookVolunteer/BookVolunteer';
 import Navbar from '../Navbar/Navbar';
+import Spinner from '../Spinner/Spinner';
 import './Home.css';
 
 const Home = () => {
@@ -22,6 +23,7 @@ const Home = () => {
             <div className="home-banner">
                 <Navbar></Navbar>
             </div>
+            {volunteerOptions.length > 0 ?  
             <div className="container">
                 <div className="card-deck">
                     {
@@ -31,7 +33,9 @@ const Home = () => {
                         ></BookVolunteer>)
                     }
                 </div>
-            </div>
+            </div> :
+            <Spinner></Spinner>}
+            
         </div>
     );
 };
