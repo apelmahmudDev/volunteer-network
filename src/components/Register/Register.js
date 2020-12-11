@@ -6,7 +6,7 @@ import { UserContext } from '../UserContext/UserContext';
 import { Link, useHistory, useParams } from 'react-router-dom';
 
 const Register = () => {
-    const [user, setUser] = useContext(UserContext);
+    const [user] = useContext(UserContext);
     const [volunteer, setVolunteer] = useState({});
     let history = useHistory();
 

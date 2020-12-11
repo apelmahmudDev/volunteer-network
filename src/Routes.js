@@ -8,6 +8,7 @@ import ActiveVolunteer from './components/ActiveVolunteer/ActiveVolunteer';
 import AddEvent from './components/AddEvent/AddEvent';
 import SideBar from './components/SideBar/SideBar';
 import Navbar from './components/Navbar/Navbar';
+import NotFound from './components/NotFound/NotFound';
   
 const Routes = () => {
     return (
@@ -26,7 +27,9 @@ const Routes = () => {
             <PrivateRoute path="/admin">
                 <SideBar />
             </PrivateRoute>
-            <Route path="*"><h1>Not Found</h1></Route>
+            <Route path="*">
+                <NotFound/>
+            </Route>
         </Switch>
     );
 };

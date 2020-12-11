@@ -12,13 +12,14 @@ import { UserContext } from '../UserContext/UserContext';
 firebase.initializeApp(firebaseConfig);
 
 const Login = () => {
+
     const [user, setUser] = useContext(UserContext);
     const [newUser, setNewUser] = useState(false);
     let history = useHistory();
     let location = useLocation();
     let { from } = location.state || { from: { pathname: "/" } };
 
-    // HANLE GOOGLE SIGN IN
+    // HANDLE GOOGLE SIGN IN
 	const googleProvider = new firebase.auth.GoogleAuthProvider();
 	const handleSignWithGoogle = () => {
 		firebase.auth().signInWithPopup(googleProvider)
@@ -116,26 +117,6 @@ const Login = () => {
 			});
 	};
 
-	//SIGN OUT
-	// const handleGoogleSignOut = () => {
-	// 	firebase
-	// 		.auth()
-	// 		.signOut()
-	// 		.then((res) => {
-	// 			const newUserInfo = {
-	// 				isSignedIn: false,
-	// 				name: '',
-	// 				email: '',
-	// 			};
-	// 			setUser(newUserInfo);
-	// 		})
-	// 		.catch((err) => {
-	// 			// An error happened.
-	// 			console.log(err.message);
-	// 		});
-	// };
-
-
     return (
         <div className="container text-center">
             <Link to="/"><img src={volunteerLogo} alt="" className="my-5 volunteer-logo"/></Link>
@@ -185,18 +166,18 @@ const Login = () => {
                         )}
                         <p className="text-center">
                             {newUser ? 'Already have an account?' : 'Do not have an account'}?{' '}
-                            <u
+                            <p
                                 onClick={() => setNewUser(!newUser)}
                                 className="text-warning text-underline"
                                 style={{ cursor: 'pointer' }}
                             >
                                 {newUser ? 'Login' : 'Create an account'}
-                            </u>
+                            </p>
                         </p>
 
                         <button className="btn sign-btn" onClick={handleSignWithGoogle}>
                             <img src={googleIcon} alt="" className="googleIcon"/>
-                            Continue With Google
+                            <span>Continue With Google</span>
                         </button>
                     </div>
                 </div>

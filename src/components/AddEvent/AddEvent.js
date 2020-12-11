@@ -6,6 +6,7 @@ const AddEvent = () => {
     const { register, handleSubmit, errors } = useForm();
 
     const onSubmit = data => {
+        data.bgColor = 'bg-info';
         // INSERT EVENT IN THE DATABASE
         fetch('https://sleepy-spire-06659.herokuapp.com/addEvent', {
             method: 'POST',
@@ -28,8 +29,8 @@ const AddEvent = () => {
             <input name="id" ref={register({ required: true })} className="form-control" placeholder="Event specific Id (min 8 charecter)"/>
             {errors.id && <span>Id is required</span>}
 
-            <div><label>Event Image</label></div>
-            <input type="file" name="img" ref={register} />
+            {/* <div><label>Event Image</label></div>
+            <input type="file" name="img" ref={register} /> */}
             
             <input className="btn btn-primary" type="submit" />
             </form>

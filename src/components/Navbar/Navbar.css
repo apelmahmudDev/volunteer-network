@@ -3,7 +3,36 @@
 }
 
 .nav-link {
-    margin-right: 30px;
+    margin-right: 25px;
     color: #3E3E3E !important;
     font-weight: 500;
 }
+
+.admin {
+    color: #FFFFFF !important;
+    border-radius: 5px;
+    width: 120px;
+    text-align: center;
+}
+
+.register {
+    color: #FFFFFF !important;
+    border-radius: 5px;
+    width: 120px;
+    text-align: center;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 991px) { 
+    .register {
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (max-device-width : 320px){
+    .navbar-brand img {
+        height: 45px;
+    }
+} 

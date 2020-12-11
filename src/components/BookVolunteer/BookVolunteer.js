@@ -1,20 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import "./BookVolunteer.css";
+import './BookVolunteer.css';
+import noImage from '../../images/no_image.png';
 
-const BookVolunteer = (props) => {
-	const {name, img, id} = props.options;
+const BookVolunteer = ({ options }) => {
 	return (
-		<>
-			<Link to={`/register/volunteer/${id}`}>
-				<div className="card">
-					<img src={img} alt="" className="w-100"/>
-					<div className="card-body">
-						<h5 className="card-title">{name}</h5>
+		<Link to={`/register/volunteer/${options.id}`} className="volunteer-link">
+			<div className="col mb-4">
+				<div className="card h-100 home-card">
+					<img src={options.img || noImage} className="card-img-top" alt="card-img" />
+					<div className={`card-body ${options.bgColor}`}>
+						<h5 className="card-title font-weight-normal">{options.name}</h5>
 					</div>
 				</div>
-			</Link>
-		</>
+			</div>
+		</Link>
 	);
 };
 

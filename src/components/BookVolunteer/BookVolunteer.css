@@ -1,8 +1,11 @@
-.card {
-    margin-right: 0px !important;
-    margin-bottom: 0 !important;
-    margin-left: 0px !important;
-    border-radius: 10px;
+.volunteer-link {
+    text-align: center;
+    text-decoration: none !important;
+    color: #ffffff;
+}
+
+.volunteer-link:hover {
+    color: #ffffff;
 }
 
 .card:hover {

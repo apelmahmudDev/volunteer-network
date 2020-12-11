@@ -4,50 +4,46 @@ import { useState } from 'react';
 import BookVolunteer from '../BookVolunteer/BookVolunteer';
 import Navbar from '../Navbar/Navbar';
 import Spinner from '../Spinner/Spinner';
+import background from '../../images/volunteer-banner.jpeg';
 import './Home.css';
+import SearchInput from '../SearchInput/SearchInput';
+import Footer from '../Footer/Footer';
 
 const Home = () => {
-    const [volunteerOptions, setVolunteerOptions] = useState([]);
-    
-    // READ ALL EVENTS FROM DATABASE
-    useEffect(() => {
-        fetch('https://sleepy-spire-06659.herokuapp.com/loadVoptions')
-        .then(res => res.json())
-        .then(data => {
-            setVolunteerOptions(data)
-        })
-    },[])
+	const [volunteerOptions, setVolunteerOptions] = useState([]);
 
-    return (
-        <div>
-            <div className="home-banner">
-                <Navbar></Navbar>
-                <div className="row d-flex justify-content-center"
-                 align-items="center">
-                    <div className="col-md-6 mt-5">
-                        <h2>I GROW BY HELPING PEOPLE IN NEED</h2>
-                        <div className="d-flex mt-3">
-                        <input type="text" className="form-control" placeholder="Search..."/>
-                        <input type="submit" value="Search" className="btn btn-primary"/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {volunteerOptions.length > 0 ?  
-            <div className="container">
-                <div className="card-deck">
-                    {
-                        volunteerOptions.map(options => <BookVolunteer
-                         options={options}
-                         key={options.id}
-                        ></BookVolunteer>)
-                    }
-                </div>
-            </div> :
-            <Spinner></Spinner>}
-            
-        </div>
-    );
+	// READ ALL EVENTS FROM DATABASE
+	useEffect(() => {
+		fetch('https://sleepy-spire-06659.herokuapp.com/loadVoptions')
+			.then((res) => res.json())
+			.then((data) => {
+				setVolunteerOptions(data);
+			});
+	}, [volunteerOptions]);
+
+	return (
+		<>
+			<div className="home-header-background">
+				<img src={background} alt="" className="w-100" />
+			</div>
+			<div className="home-header">
+				<Navbar></Navbar>
+				<SearchInput></SearchInput>
+			</div>
+			<div className="container home-body">
+				{volunteerOptions.length > 0 ? (
+					<div className="row row-cols-1 row-cols-md-4">
+						{volunteerOptions.map((options) => (
+							<BookVolunteer key={options.id} options={options}></BookVolunteer>
+						))}
+					</div>
+				) : (
+					<Spinner></Spinner>
+				)}
+			</div>
+			<Footer></Footer>
+		</>
+	);
 };
 
 export default Home;

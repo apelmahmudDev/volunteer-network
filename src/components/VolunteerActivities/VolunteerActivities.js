@@ -22,11 +22,11 @@ const VolunteerActivities = (props) => {
     }
 
     return (
-        <div>
-            <div className="activity-item">
-                <img src={photo} alt="" className="w-25"/>
+        <div className="col mb-4 active-volunteer">
+            <div className="card activity-card">
+                <img src={photo} alt="" className="card-img w-25"/>
                 <div className="activity-describe">
-                    <h3>{volunteerOption}</h3>
+                    <h3 className="font-weight-normal">{volunteerOption}</h3>
                     <p><strong>{date}</strong></p>
                     <div><button onClick={() => deleteVolunteer(_id)} className="btn activity-btn">Cancel</button></div>
                 </div>

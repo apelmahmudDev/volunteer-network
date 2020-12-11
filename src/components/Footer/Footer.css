@@ -1,0 +1,27 @@
+.footer-top {
+    margin-top: 5%;
+    padding: 5%;
+    background: #20232E;
+    color: #959595;
+}
+
+.footer-bottom {
+    background: #1B1D26;
+    text-align: center;
+    color: #959595
+}
+
+/* RESPONSIVE-AREA */
+@media (max-width: 767px) { 
+    .first-column {
+        margin-bottom: 30px;
+    }
+
+    .second-column {
+        margin-bottom: 30px;
+    }
+
+    .third-column {
+        margin: 30px 0;
+    }
+}
